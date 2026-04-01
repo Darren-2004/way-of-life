@@ -64,12 +64,11 @@
           <p class="mt-2 font-medium">WhatsApp: +237 686 15 32 32</p>
           <p class="mt-4 text-sm text-[#6c6059]">Horaires : 7h30 - 18h30</p>
         </div>
-        <form class="bg-white p-7 rounded shadow-sm">
+        <form id="whatsappForm" class="bg-white p-7 rounded shadow-sm">
           <h2 class="serif text-3xl mb-5">envoyer un message</h2>
-          <input class="w-full border border-[#d4c7be] px-4 py-2 mb-3" type="text" placeholder="Nom complet">
-          <input class="w-full border border-[#d4c7be] px-4 py-2 mb-3" type="email" placeholder="E-mail">
-          <textarea class="w-full border border-[#d4c7be] px-4 py-2 h-28 mb-4" placeholder="Dites-nous quel cours vous intéresse (séance individuelle, carte 3, 5 ou 10)"></textarea>
-          <button class="bg-[#30d5c8] text-[#12322f] px-6 py-2 uppercase tracking-[0.14em] text-xs">Réserver via WhatsApp</button>
+          <input id="clientName" class="w-full border border-[#d4c7be] px-4 py-2 mb-3" type="text" placeholder="Nom complet" required>
+          <textarea id="clientMessage" class="w-full border border-[#d4c7be] px-4 py-2 h-28 mb-4" placeholder="Dites-nous quel cours vous intéresse (séance individuelle, carte 3, 5 ou 10)" required></textarea>
+          <button type="submit" class="bg-[#30d5c8] text-[#12322f] px-6 py-2 uppercase tracking-[0.14em] text-xs">Réserver via WhatsApp</button>
         </form>
       </div>
     </section>
@@ -174,6 +173,27 @@
         if (window.innerWidth >= 768) {
           navMenu.classList.remove("mobile-nav-open");
         }
+      });
+    }
+
+    const whatsappForm = document.getElementById("whatsappForm");
+    if (whatsappForm) {
+      whatsappForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.getElementById("clientName").value.trim();
+        const message = document.getElementById("clientMessage").value.trim();
+        const whatsappNumber = "237686153232";
+        const prefilledMessage = [
+          "Bonjour Way of Life,",
+          "",
+          "Je souhaite reserver un cours de Pilates.",
+          "Nom: " + name,
+          "Message: " + message,
+          "",
+          "Merci."
+        ].join("\n");
+        const whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(prefilledMessage);
+        window.open(whatsappUrl, "_blank");
       });
     }
   </script>
