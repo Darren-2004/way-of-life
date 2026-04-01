@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>way of life | Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: #f2efec; color: #2e231d; font-family: "Inter", sans-serif; }
+    .serif { font-family: "Playfair Display", serif; }
+    .logo-font { font-family: "Syncopate", sans-serif; font-weight: 700; letter-spacing: .09em; display: inline-block; transform: scaleY(.78); transform-origin: center; text-transform: lowercase; }
+    .section-wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
+    .mobile-nav-open {
+      display: flex !important;
+      flex-direction: column;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      width: 100%;
+      background: rgba(242, 239, 236, .98);
+      border-top: 1px solid #daccc0;
+      padding: 1rem;
+      gap: .8rem;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body>
+  <header class="relative bg-[#30d5c8] text-[#12322f]">
+    <div class="section-wrap flex justify-between items-center py-5">
+      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-[0.15em]">
+        <a href="index.html" class="hover:text-white">Accueil</a>
+        <a href="services.html" class="hover:text-white">Planning</a>
+      </nav>
+      <a href="index.html" class="logo-font text-2xl md:text-3xl text-[#12322f]">way of life</a>
+      <div class="hidden md:flex gap-6 text-xs uppercase tracking-[0.15em]">
+        <a href="contact.html" class="text-white">À propos</a>
+        <a href="contact.html" class="text-white">Contact</a>
+      </div>
+      <button id="burgerBtn" class="md:hidden text-2xl text-[#12322f]" aria-label="Open menu">&#9776;</button>
+    </div>
+    <ul id="navMenu" class="hidden md:hidden text-sm uppercase tracking-[0.15em] text-[#4f372d]">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Planning</a></li>
+      <li><a href="contact.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <main class="section-wrap py-14 space-y-10">
+    <section>
+      <h1 class="serif text-5xl mb-3">contactez way of life</h1>
+      <p class="text-[#6c6059] max-w-2xl mb-10">Des questions sur les cours de Pilates reformer ? Réservations directes par WhatsApp et accompagnement personnalisé.</p>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="bg-white p-7 rounded shadow-sm">
+          <h2 class="serif text-3xl mb-5">détails du studio</h2>
+          <p class="mb-2">Studio de Pilates reformer à Yaoundé</p>
+          <p class="mb-2">Coffee&matcha Space</p>
+          <p class="mb-2">immeuble ACE bastos</p>
+          <p>Relax with Pilate</p>
+          <p class="mt-2 font-medium">WhatsApp: +237 686 15 32 32</p>
+          <p class="mt-4 text-sm text-[#6c6059]">Horaires : 7h30 - 18h30</p>
+        </div>
+        <form class="bg-white p-7 rounded shadow-sm">
+          <h2 class="serif text-3xl mb-5">envoyer un message</h2>
+          <input class="w-full border border-[#d4c7be] px-4 py-2 mb-3" type="text" placeholder="Nom complet">
+          <input class="w-full border border-[#d4c7be] px-4 py-2 mb-3" type="email" placeholder="E-mail">
+          <textarea class="w-full border border-[#d4c7be] px-4 py-2 h-28 mb-4" placeholder="Dites-nous quel cours vous intéresse (séance individuelle, carte 3, 5 ou 10)"></textarea>
+          <button class="bg-[#30d5c8] text-[#12322f] px-6 py-2 uppercase tracking-[0.14em] text-xs">Réserver via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-5">
+      <article class="bg-white p-6 rounded shadow-sm">
+        <h3 class="serif text-2xl mb-3">notre accompagnement</h3>
+        <p class="text-[#6c6059]">Nous évaluons votre posture et votre mobilité pour recommander le parcours Pilates adapté à vos objectifs.</p>
+      </article>
+      <article class="bg-white p-6 rounded shadow-sm">
+        <h3 class="serif text-2xl mb-3">séances privées</h3>
+        <p class="text-[#6c6059]">Besoin d'un suivi individuel ? Réservez des séances de reformer ou de mat pour une progression accélérée.</p>
+      </article>
+      <article class="bg-white p-6 rounded shadow-sm">
+        <h3 class="serif text-2xl mb-3">bien-être en entreprise</h3>
+        <p class="text-[#6c6059]">Nous proposons des séances axées sur la posture pour les équipes afin de réduire le stress et la fatigue.</p>
+      </article>
+    </section>
+
+    <section class="bg-white p-7 rounded shadow-sm">
+      <h2 class="serif text-3xl mb-4">tarifs officiels</h2>
+      <div class="grid md:grid-cols-2 gap-4 text-[#6c6059]">
+        <p>Séance individuelle: <strong>15 000 XAF</strong></p>
+        <p>Carte 3 séances: <strong>39 000 XAF</strong></p>
+        <p>Carte 5 séances: <strong>65 000 XAF</strong></p>
+        <p>Carte 10 séances: <strong>120 000 XAF</strong></p>
+        <p>Adhésion way of life: <strong>5 000 XAF / an</strong></p>
+      </div>
+      <ul class="mt-4 text-sm text-[#6c6059] list-disc list-inside space-y-1">
+        <li>L'adhésion donne accès à une expérience plus exclusive.</li>
+        <li>Invitations aux événements way of life.</li>
+        <li>Accès prioritaire aux réservations.</li>
+      </ul>
+    </section>
+
+    <section class="bg-white p-7 rounded shadow-sm">
+      <h2 class="serif text-3xl mb-4">visitez way of life</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="text-[#6c6059]">
+          <p class="mb-3">Studio de Pilates reformer à Yaoundé - Coffee&matcha Space, immeuble ACE bastos.</p>
+          <p class="mb-3">Parking disponible à proximité. Veuillez arriver 10 à 15 minutes avant votre première séance.</p>
+          <a href="services.html" class="inline-block mt-2 border border-[#b7aaa0] px-5 py-2 text-[11px] tracking-[0.16em] uppercase rounded-sm hover:bg-[#f8f4f0]">Voir le planning des cours</a>
+        </div>
+        <div class="h-56 rounded bg-[#e9dfd7] flex items-center justify-center text-[#6c6059] text-sm">
+          APERÇU DE LA CARTE - QUARTIER DU BIEN-ÊTRE, YAOUNDÉ
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#30d5c8] text-[#12322f] py-12 mt-10">
+    <div class="section-wrap">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-10">
+        <div class="col-span-1 md:col-span-1">
+          <a href="index.html" class="logo-font text-xl md:text-2xl text-[#12322f]">way of life</a>
+          <p class="text-xs mt-4 leading-relaxed opacity-80 uppercase tracking-wider">Studio de Pilates reformer à Yaoundé.</p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-widest font-semibold mb-6 text-[#12322f]">Explorer</h4>
+          <ul class="text-xs space-y-3 opacity-80 uppercase tracking-widest">
+            <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
+            <li><a href="services.html" class="hover:text-white transition">Planning</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">À propos</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Réserver</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-widest font-semibold mb-6 text-[#12322f]">Contact</h4>
+          <ul class="text-xs space-y-3 opacity-80 uppercase tracking-widest">
+            <li>Coffee&matcha Space</li>
+            <li>immeuble ACE bastos</li>
+            <li>686153232</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-widest font-semibold mb-6 text-[#12322f]">Suivre</h4>
+          <div class="flex gap-4 text-xs uppercase tracking-widest">
+            <a href="#" class="opacity-80 hover:opacity-100 transition">Instagram</a>
+            <a href="#" class="opacity-80 hover:opacity-100 transition">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-60">
+        <p>© 2024 way of life pilates studio. Tous droits réservés.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white">Mentions Légales</a>
+          <a href="#" class="hover:text-white">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burgerBtn");
+    const navMenu = document.getElementById("navMenu");
+    if (burger && navMenu) {
+      burger.addEventListener("click", () => navMenu.classList.toggle("mobile-nav-open"));
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => navMenu.classList.remove("mobile-nav-open"));
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          navMenu.classList.remove("mobile-nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
