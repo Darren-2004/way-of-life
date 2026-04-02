@@ -13,6 +13,12 @@
     .serif { font-family: "Playfair Display", serif; }
     .logo-font { font-family: "Syncopate", sans-serif; font-weight: 700; letter-spacing: .09em; display: inline-block; transform: scaleY(.78); transform-origin: center; text-transform: lowercase; }
     .section-wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
+    .site-header { position: sticky; top: 0; z-index: 60; transition: box-shadow .25s ease, backdrop-filter .25s ease; }
+    .site-header.scrolled { box-shadow: 0 8px 24px rgba(0,0,0,.16); backdrop-filter: blur(6px); }
+    .lift-card { transition: transform .28s ease, box-shadow .28s ease; }
+    .lift-card:hover { transform: translateY(-6px); box-shadow: 0 14px 26px rgba(0,0,0,.12); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .mobile-nav-open {
       display: flex !important;
       flex-direction: column;
@@ -29,7 +35,7 @@
   </style>
 </head>
 <body>
-  <header class="relative bg-[#30d5c8] text-[#12322f]">
+  <header id="siteHeader" class="site-header relative bg-[#30d5c8] text-[#12322f]">
     <div class="section-wrap flex justify-between items-center py-5">
       <nav class="hidden md:flex gap-6 text-xs uppercase tracking-[0.15em]">
         <a href="index.html" class="hover:text-white">Accueil</a>
@@ -55,7 +61,7 @@
       <h1 class="serif text-5xl mb-3">contactez way of life</h1>
       <p class="text-[#6c6059] max-w-2xl mb-10">Des questions sur les cours de Pilates reformer ? Réservations directes par WhatsApp et accompagnement personnalisé.</p>
       <div class="grid md:grid-cols-2 gap-7">
-        <div class="bg-white p-7 rounded shadow-sm">
+        <div class="bg-white p-7 rounded shadow-sm lift-card reveal">
           <h2 class="serif text-3xl mb-5">détails du studio</h2>
           <p class="mb-2">Studio de Pilates reformer à Yaoundé</p>
           <p class="mb-2">Coffee&matcha Space</p>
@@ -64,7 +70,7 @@
           <p class="mt-2 font-medium">WhatsApp: +237 686 15 32 32</p>
           <p class="mt-4 text-sm text-[#6c6059]">Horaires : 7h30 - 18h30</p>
         </div>
-        <form id="whatsappForm" class="bg-white p-7 rounded shadow-sm">
+        <form id="whatsappForm" class="bg-white p-7 rounded shadow-sm lift-card reveal">
           <h2 class="serif text-3xl mb-5">envoyer un message</h2>
           <input id="clientName" class="w-full border border-[#d4c7be] px-4 py-2 mb-3" type="text" placeholder="Nom complet" required>
           <textarea id="clientMessage" class="w-full border border-[#d4c7be] px-4 py-2 h-28 mb-4" placeholder="Dites-nous quel cours vous intéresse (séance individuelle, carte 3, 5 ou 10)" required></textarea>
@@ -74,21 +80,21 @@
     </section>
 
     <section class="grid md:grid-cols-3 gap-5">
-      <article class="bg-white p-6 rounded shadow-sm">
+      <article class="bg-white p-6 rounded shadow-sm lift-card reveal">
         <h3 class="serif text-2xl mb-3">notre accompagnement</h3>
         <p class="text-[#6c6059]">Nous évaluons votre posture et votre mobilité pour recommander le parcours Pilates adapté à vos objectifs.</p>
       </article>
-      <article class="bg-white p-6 rounded shadow-sm">
+      <article class="bg-white p-6 rounded shadow-sm lift-card reveal">
         <h3 class="serif text-2xl mb-3">séances privées</h3>
         <p class="text-[#6c6059]">Besoin d'un suivi individuel ? Réservez des séances de reformer ou de mat pour une progression accélérée.</p>
       </article>
-      <article class="bg-white p-6 rounded shadow-sm">
+      <article class="bg-white p-6 rounded shadow-sm lift-card reveal">
         <h3 class="serif text-2xl mb-3">bien-être en entreprise</h3>
         <p class="text-[#6c6059]">Nous proposons des séances axées sur la posture pour les équipes afin de réduire le stress et la fatigue.</p>
       </article>
     </section>
 
-    <section class="bg-white p-7 rounded shadow-sm">
+    <section class="bg-white p-7 rounded shadow-sm reveal">
       <h2 class="serif text-3xl mb-4">tarifs officiels</h2>
       <div class="grid md:grid-cols-2 gap-4 text-[#6c6059]">
         <p>Séance individuelle: <strong>15 000 XAF</strong></p>
@@ -104,7 +110,7 @@
       </ul>
     </section>
 
-    <section class="bg-white p-7 rounded shadow-sm">
+    <section class="bg-white p-7 rounded shadow-sm reveal">
       <h2 class="serif text-3xl mb-4">visitez way of life</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="text-[#6c6059]">
@@ -146,8 +152,8 @@
         <div>
           <h4 class="text-xs uppercase tracking-widest font-semibold mb-6 text-[#12322f]">Suivre</h4>
           <div class="flex gap-4 text-xs uppercase tracking-widest">
-            <a href="#" class="opacity-80 hover:opacity-100 transition">Instagram</a>
-            <a href="#" class="opacity-80 hover:opacity-100 transition">Facebook</a>
+            <a href="https://www.instagram.com/wayoflifepilates?igsh=c3plNWQ2Yno2aGNy" target="_blank" class="opacity-80 hover:opacity-100 transition">Instagram</a>
+            <a href="https://www.tiktok.com/@wayoflife337?_r=1&_d=ehad3m8l6541a7&sec_uid=MS4wLjABAAAAjpdOeCbUXe0CEkrNTCUbOcr0JOoqSS1LETHdF494xai9NTBTPsqc3EatrpEPtvzH&share_author_id=7604076124834219026&sharer_language=en&source=h5_m&u_code=dgd6h6i43de230&item_author_type=2&utm_source=copy&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=A6310553-3FE0-4284-9C15-652CB60320FD&user_id=6915772933369840646&sec_user_id=MS4wLjABAAAAMHHoCHELVGnKza5lVaGe6xYAxevNKVsB0PZVM7yLk6_9qwAaTAqmnjaRoG1gz-iS&social_share_type=5&ug_btm=b2001,b5836&utm_campaign=client_share&share_app_id=1233" target="_blank" class="opacity-80 hover:opacity-100 transition">TikTok</a>
           </div>
         </div>
       </div>
@@ -161,7 +167,14 @@
     </div>
   </footer>
 
+  <button id="backToTop" class="fixed bottom-8 right-8 z-50 bg-[#30d5c8] text-[#12322f] w-12 h-12 rounded-full shadow-xl flex items-center justify-center opacity-0 translate-y-10 pointer-events-none transition-all duration-500 hover:bg-[#12322f] hover:text-[#30d5c8]" aria-label="Retour en haut">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
   <script>
+    const siteHeader = document.getElementById("siteHeader");
     const burger = document.getElementById("burgerBtn");
     const navMenu = document.getElementById("navMenu");
     if (burger && navMenu) {
@@ -175,6 +188,20 @@
         }
       });
     }
+    window.addEventListener("scroll", () => {
+      if (!siteHeader) return;
+      siteHeader.classList.toggle("scrolled", window.scrollY > 24);
+    });
+    const revealItems = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealItems.forEach((item) => revealObserver.observe(item));
 
     const whatsappForm = document.getElementById("whatsappForm");
     if (whatsappForm) {
@@ -194,6 +221,20 @@
         ].join("\n");
         const whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(prefilledMessage);
         window.open(whatsappUrl, "_blank");
+      });
+    }
+
+    const backToTopBtn = document.getElementById("backToTop");
+    if (backToTopBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.remove("opacity-0", "translate-y-10", "pointer-events-none");
+        } else {
+          backToTopBtn.classList.add("opacity-0", "translate-y-10", "pointer-events-none");
+        }
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     }
   </script>
