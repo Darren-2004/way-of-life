@@ -1,0 +1,128 @@
+
+
+:root {
+  --cream: #f2efec;
+  --ink: #2e231d;
+  --muted: #72665e;
+  --brown: #30d5c8;
+  --rose: #d7ab97;
+  --taupe: #968573;
+  --footer: #30d5c8;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+}
+
+.serif {
+  font-family: "Playfair Display", serif;
+  letter-spacing: .01em;
+}
+
+.logo-font {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  letter-spacing: .09em;
+  display: inline-block;
+  transform: scaleY(.78);
+  transform-origin: center;
+  text-transform: lowercase;
+}
+
+.section-wrap {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  transition: background-color .25s ease, box-shadow .25s ease, backdrop-filter .25s ease;
+}
+
+.site-header.is-home.scrolled {
+  background: rgba(20, 28, 27, 0.58);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+.site-header.not-home.scrolled {
+  box-shadow: 0 8px 24px rgba(0,0,0,.16);
+  backdrop-filter: blur(6px);
+}
+
+.hero {
+  min-height: 640px;
+  background-image: linear-gradient(to bottom, rgba(31, 25, 20, 0.2), rgba(31, 25, 20, 0.32)), url("https://cdn.prod.website-files.com/66f99d92b5830fbc4fe88d05/6862e8c9776adf05f7df5463_Saans%20Pilates%20Studio%20-%20Southfield%2C%20Michigan%20-1-p-2000.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.pricing-card {
+  min-height: 210px;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.lift-card {
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.lift-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.12);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-nav-open {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  background: rgba(242, 239, 236, .98);
+  border-top: 1px solid #daccc0;
+  padding: 1rem;
+  gap: .8rem;
+  z-index: 50;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 520px;
+  }
+}
+
+/* PWA banner slide-up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
